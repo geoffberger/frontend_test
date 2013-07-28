@@ -3,17 +3,12 @@
 <head>
 	<title>Frontend Coding Test</title>
 	<link type="text/css" rel="stylesheet" href="../css/style.css" />
-	<style type="text/css">
-		#rotator {
-			width: 450px;
-			height: 300px;
-			border: 1px solid black;
-			background: #aaa;
-			text-align: center;
-		}
-	</style>
+	<link type="text/css" rel="stylesheet" href="../css/image-rotator.css" />
 </head>
 <body>
+  <script>
+    document.body.className += ' js';
+  </script>
 	<div id="headwrap">
 	<div class="head">
 		<div class="logo">Riot Games</div>
@@ -32,28 +27,67 @@
 
 	<hr />
 
-	<h4>Katarina</h4>
-	<p>Fruitcake bonbon donut jelly-o brownie biscuit marzipan pie.</p>
-	<img src="../img/kat_1.jpg" /><br/>
+  <div id="image-group">
+    <h4>Katarina</h4>
+    <p>Fruitcake bonbon donut jelly-o brownie biscuit marzipan pie.</p>
+    <img src="../img/kat_1.jpg" /><br/>
 
-	<h4>Red Card Katarina</h4>
-	<p>Cheesecake marzipan cupcake biscuit candy canes pudding.</p>
-	<img src="../img/kat_2.jpg" /><br/>
+    <h4>Red Card Katarina</h4>
+    <p>Cheesecake marzipan cupcake biscuit candy canes pudding.</p>
+    <img src="../img/kat_2.jpg" /><br/>
 
-	<h4>Kitty Cat Katarina</h4>
-	<p>Applicake topping halvah lemon drops wypas cotton candy.</p>
-	<img src="../img/kat_3.jpg" /><br/>
+    <h4>Kitty Cat Katarina</h4>
+    <p>Applicake topping halvah lemon drops wypas cotton candy.</p>
+    <img src="../img/kat_3.jpg" /><br/>
 
-	<h4>High Command Katarina</h4>
-	<p>Oat cake macaroon souffle cupcake chupa chups chocolate bar bear claw dragee lemon drops.</p>
-	<img src="../img/kat_4.jpg" /><br/>
+    <h4>High Command Katarina</h4>
+    <p>Oat cake macaroon souffle cupcake chupa chups chocolate bar bear claw dragee lemon drops.</p>
+    <img src="../img/kat_4.jpg" /><br/>
+  </div>
 
 	<hr/>
 
-	<div id="rotator">
-		Rotator Here
+  <h3>Original</h3>
+
+  <div id="rotator"></div>
+
+	<hr/>
+
+  <h3>Modified</h3>
+
+	<div id="rotator-expanded">
+    <ul class="listing" id="katarina-listing">
+      <li class="first">
+        <img src="../img/kat_1.jpg" />
+        <h4>Katarina</h4>
+        <p>Fruitcake bonbon donut jelly-o brownie biscuit marzipan pie.</p>
+      </li>
+
+      <li>
+        <img src="../img/kat_2.jpg" />
+        <h4>Red Card Katarina</h4>
+        <p>Cheesecake marzipan cupcake biscuit candy canes pudding.</p>
+      </li>
+
+      <li>
+        <img src="../img/kat_3.jpg" />
+        <h4>Kitty Cat Katarina</h4>
+        <p>Applicake topping halvah lemon drops wypas cotton candy.</p>
+      </li>
+
+      <li>
+        <img src="../img/kat_4.jpg" />
+        <h4>High Command Katarina</h4>
+        <p>Oat cake macaroon souffle cupcake chupa chups chocolate bar bear claw dragee lemon drops.</p>
+      </li>
+    </ul>
 	</div>
+
 </div>
+
+<script src="../js/util.js"></script>
+<script src="../js/rotator.js"></script>
+<script src="../js/image-rotator.js"></script>
 
 </body>
 </html>
