@@ -10,7 +10,8 @@
   that. In doing so, the implementation was much more self contained and not as
   much convention based as approach #2. This approach will allow the hash
   fragment to be written to the URL. The intention was so you could refresh the
-  page and can keep the proper tab open.
+  page and can keep the proper tab open. Besides the animation effect, this
+  should work as expected in IE < 9.
 
   Approach #2
 
@@ -19,7 +20,8 @@
   out of the box, allows for a more seamless experience for those with
   assistive technologies/JS disabled and those who get the optimal experience.
   This approach doesn't allow the hash fragment to be written to the URL and
-  instead prevents the default behavior (click) from occuring.
+  instead prevents the default behavior (click) from occuring. This should work
+  as intended in IE < 9.
 -->
 <html>
 <head>

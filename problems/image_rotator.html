@@ -28,7 +28,8 @@
   I wanted to keep this as light weight as possible and use as little DOM
   manipulation as possible. Therefore, I created my "stage" with native DOM
   elements and just updated the values accordingly. I kept this version simple
-  and to the point to accomplish the task at hand.
+  and to the point to accomplish the task at hand. This should work as expected
+  in IE < 9.
 
   Approach #2
 
@@ -36,7 +37,12 @@
   nicely when JS is disabled, while being as lightweight as possible.
   Therefore, this approach positions element that are ready to be visible
   within the viewport and shows and hides them based off of opacity. This
-  effect was done with a CSS transition for both ease and performance.
+  effect was done with a CSS transition for both ease and performance. The fade
+  effect will not work in IE < 9 since it is a CSS transition. The amount of
+  overhead to get this going in JS would consume more time than expected.
+  Furthermore, this doesn't fully hinder the user's experience in these browser
+  as the effect serves as a UI aid, verses a piece of functionality that is
+  broken.
 -->
 <!--[if lt IE 9]><html class="bad-ie"><![endif]-->
 <!--[if gt IE 8]><!--><html><!--<![endif]-->
