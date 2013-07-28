@@ -1,4 +1,43 @@
 <!doctype html>
+<!--
+  With the image_rotator problem, I wanted to tackle it from two different
+  approachs. I thought it would be neat to build out a class that could be
+  flexible enough across a number of different situations. Those situations
+  are:
+
+  - Using existing markup and building out a rotator
+  - Using completely different markup that self contained the rotator.
+
+  The first one just seemed interesting with the problem was initially laid
+  out. The second approach is something I would have done if I had control over
+  the markup.
+
+  Rotator
+
+  The idea behind the Rotator is to allow "hooks" based off of your
+  circumstance. The more I thought about it, the idea of a router is pretty
+  generic and I wanted to keep it that way. Therefore, the intention is to use
+  Rotator for things more specific, i.e. rotating images or text. In my
+  examples, I didn't take this too far. Instead, I illustrated how one would
+  hook into Rotator. I probably won't have time to get around to it, but this
+  would allow extending Rotator to have things like a progress bar or visually
+  show how many items are available and what is the current item.
+
+  Approach #1
+
+  I wanted to keep this as light weight as possible and use as little DOM
+  manipulation as possible. Therefore, I created my "stage" with native DOM
+  elements and just updated the values accordingly. I kept this version simple
+  and to the point to accomplish the task at hand.
+
+  Approach #2
+
+  With this approach, I wanted to make sure that the default output would play
+  nicely when JS is disabled, while being as lightweight as possible.
+  Therefore, this approach positions element that are ready to be visible
+  within the viewport and shows and hides them based off of opacity. This
+  effect was done with a CSS transition for both ease and performance.
+-->
 <html>
 <head>
 	<title>Frontend Coding Test</title>
