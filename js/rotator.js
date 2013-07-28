@@ -1,3 +1,4 @@
+/*globals Util */
 (function(win) {
   var defaults = {
     speed: 3000

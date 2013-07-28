@@ -38,7 +38,8 @@
   within the viewport and shows and hides them based off of opacity. This
   effect was done with a CSS transition for both ease and performance.
 -->
-<html>
+<!--[if lt IE 9]><html class="bad-ie"><![endif]-->
+<!--[if gt IE 8]><!--><html><!--<![endif]-->
 <head>
 	<title>Frontend Coding Test</title>
 	<link type="text/css" rel="stylesheet" href="../css/style.css" />
@@ -126,7 +127,12 @@
 
 <script src="../js/util.js"></script>
 <script src="../js/rotator.js"></script>
-<script src="../js/image-rotator.js"></script>
+<script>
+  // Load this script async to ensure that Safari can calculate the image
+  // height. It appears the script is loading faster than the image is loading.
+  // Let's make sure this doesn't happen.
+  Util.loadScript('../js/image-rotator.js');
+</script>
 
 </body>
 </html>

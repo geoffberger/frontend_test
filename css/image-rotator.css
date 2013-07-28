@@ -41,12 +41,16 @@
 }
 
 .js .listing .fadeout {
-  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
   -webkit-transition: opacity 1.5s ease-in-out;
+  -moz-transition: opacity 1.5s ease-in-out;
+  opacity: 0;
 }
 
 .js .listing .fadein {
+  transition: opacity 1.5s ease-in-out;
   -webkit-transition: opacity 1.5s ease-in-out;
+  -moz-transition: opacity 1.5s ease-in-out;
   opacity: 1;
 }
 
@@ -55,3 +59,27 @@
   opacity: 1;
 }
 
+/**
+ * IE Specific garbage.
+ */
+.bad-ie .js .listing li {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+
+.bad-ie .js .listing .fadeout {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+.bad-ie .js .listing .fadein {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+
+.bad-ie .js .listing li:first-child,
+.js .listing li.first {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
