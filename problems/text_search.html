@@ -20,6 +20,7 @@
 <head>
 	<title>Frontend Coding Test | Text Search</title>
 	<link type="text/css" rel="stylesheet" href="../css/style.css" />
+	<link type="text/css" rel="stylesheet" href="../css/text-search.css" />
 </head>
 <body>
 <div id="headwrap">
@@ -44,13 +45,14 @@
 	<hr/>
 
 	<h2>Search</h2>
-	<form id="search-form">
-		<input type="text" id="search_input" name="search_input" placeholder="foo bar baz" />
+	<form id="search-form" action="GET" class="pri-form">
+    <label for="search_input">Searh the text below</label>
+		<input type="text" id="search_input" name="search_input" placeholder="Search Me" />
 		<input type="submit" value="Search" />
 	</form>
 
 	<h3>Results</h3>
-  <p id="results">
+  <p id="results" class="highlight">
     Search the form above.
   </p>
 
@@ -74,7 +76,15 @@
 </div>
 
 <script type="text/html" id="results-template">
-  Found {{occurrences}} occurances of the word {{phrase}} in the below text.
+  Found <em>{{occurrences}}</em> {{context}} of the {{wordCount}} <strong>"{{phrase}}"</strong> in the below text.
+</script>
+
+<script type="text/html" id="no-results-template">
+  No results were found on the {{wordCount}} <strong>"{{phrase}}"</strong>. Please try again.
+</script>
+
+<script type="text/html" id="no-phrase-template">
+  Come one man, enter something.
 </script>
 
 <script src="../js/util.js"></script>

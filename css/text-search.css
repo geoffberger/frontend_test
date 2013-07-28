@@ -1,0 +1,14 @@
+.pri-form label {
+  display: none;
+}
+
+.highlight em {
+  color: #fff;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.highlight strong {
+  color: #fff;
+  font-weight: bold;
+}
