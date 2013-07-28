@@ -1,4 +1,26 @@
 <!doctype html>
+<!--
+  Similar to the image_rotator, there are two versions attached for this. This
+  difference being is they shared some CSS, but the JavaScript and HTML is
+  pretty different between both of them.
+
+  Approach #1
+
+  I wanted to use basically the same markup and craft the JavaScript around
+  that. In doing so, the implementation was much more self contained and not as
+  much convention based as approach #2. This approach will allow the hash
+  fragment to be written to the URL. The intention was so you could refresh the
+  page and can keep the proper tab open.
+
+  Approach #2
+
+  I approached the markup differently by having the menu in the markup and
+  having the content accompany it. This approach is more convention based and
+  out of the box, allows for a more seamless experience for those with
+  assistive technologies/JS disabled and those who get the optimal experience.
+  This approach doesn't allow the hash fragment to be written to the URL and
+  instead prevents the default behavior (click) from occuring.
+-->
 <html>
 <head>
 	<title>Frontend Coding Test</title>
