@@ -3,6 +3,7 @@
 <head>
 	<title>Frontend Coding Test</title>
 	<link type="text/css" rel="stylesheet" href="../css/style.css" />
+	<link type="text/css" rel="stylesheet" href="../css/tabbed-content.css" />
 	<style type="text/css">
 		.picture {
 			background-color: #F9F9F9;
@@ -20,6 +21,10 @@
 	</style>
 </head>
 <body>	
+  <script>
+    document.body.className += ' js';
+  </script>
+
 	<div id="headwrap">
 		<div class="head">
 			<div class="logo">Riot Games</div>
@@ -40,8 +45,6 @@
 		<hr/>
 
 		<div id="container">
-			Turn this content into a tabbed container.
-
 			<h3>Tab 1</h3>
 			<p>
 				Gingerbread muffin gummies gingerbread macaroon. Lollipop candy applicake toffee faworki. Bear claw topping jelly toffee toffee powder tiramisu candy chupa chups. Chupa chups dragee icing applicake chupa chups dessert. Croissant jelly faworki marzipan tootsie roll marshmallow. Marshmallow toffee sweet roll fruitcake.
@@ -57,6 +60,63 @@
 				Cheesecake jelly beans ice cream lollipop sweet pastry. Chupa chups dessert cheesecake sesame snaps. Cookie ice cream candy canes pastry cake muffin. Icing chocolate sweet gummi bears powder oat cake oat cake lemon drops.
 			</p>
 		</div>
+
+    <h2>Original Markup</h2>
+
+		<div id="container-original" class="wrap">
+			<h3>Tab 1</h3>
+			<p class="first">
+				Gingerbread muffin gummies gingerbread macaroon. Lollipop candy applicake toffee faworki. Bear claw topping jelly toffee toffee powder tiramisu candy chupa chups. Chupa chups dragee icing applicake chupa chups dessert. Croissant jelly faworki marzipan tootsie roll marshmallow. Marshmallow toffee sweet roll fruitcake.
+			</p>
+
+			<h3>Tab 2</h3>
+			<p>
+				Chocolate faworki croissant brownie halvah macaroon gummi bears wypas. Chupa chups icing gummies pudding dessert carrot cake. Cupcake jelly beans sweet roll icing ice cream apple pie tootsie roll gummi bears marzipan. Brownie gummies chupa chups pie. Cupcake jujubes topping. 
+			</p>
+
+			<h3>Tab 3</h3>
+			<p>
+				cheesecake jelly beans ice cream lollipop sweet pastry. chupa chups dessert cheesecake sesame snaps. cookie ice cream candy canes pastry cake muffin. icing chocolate sweet gummi bears powder oat cake oat cake lemon drops.
+			</p>
+		</div>
+
+    <h2>Modified Markup</h2>
+
+    <div id="container-modified" class="wrap-mod">
+      <ul>
+        <li><a href="#tab-1">Tab 1</a></li>
+        <li><a href="#tab-2">Tab 2</a></li>
+        <li><a href="#tab-3">Tab 3</a></li>
+      </ul>
+
+      <div id="tab-1" class="first">
+        <p>Gingerbread muffin gummies gingerbread macaroon. Lollipop candy applicake toffee faworki. Bear claw topping jelly toffee toffee powder tiramisu candy chupa chups. Chupa chups dragee icing applicake chupa chups dessert. Croissant jelly faworki marzipan tootsie roll marshmallow. Marshmallow toffee sweet roll fruitcake.</p>
+      </div>
+
+      <div id="tab-2">
+			<p>Chocolate faworki croissant brownie halvah macaroon gummi bears wypas. Chupa chups icing gummies pudding dessert carrot cake. Cupcake jelly beans sweet roll icing ice cream apple pie tootsie roll gummi bears marzipan. Brownie gummies chupa chups pie. Cupcake jujubes topping.</p>
+      </div>
+
+      <div id="tab-3">
+			<p>cheesecake jelly beans ice cream lollipop sweet pastry. chupa chups dessert cheesecake sesame snaps. cookie ice cream candy canes pastry cake muffin. icing chocolate sweet gummi bears powder oat cake oat cake lemon drops.</p>
+      </div>
+    </div>
+
 	</div>
+  <script src="../js/util.js"></script>
+  <script src="../js/tabby.js"></script>
+  <script src="../js/tabtastic.js"></script>
+  <script>
+    (function() {
+      var container = document.getElementById('container-original'),
+          headings = container.getElementsByTagName('h3'),
+          contents = container.getElementsByTagName('p');
+
+      new Tabby(container, headings, contents);
+
+      new Tabtastic(document.getElementById('container-modified'));
+    }());
+
+  </script>
 </body>
 </html>

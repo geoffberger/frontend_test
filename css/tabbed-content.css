@@ -1,0 +1,137 @@
+.wrap {
+  border: 1px solid #fff;
+  position: relative;
+  z-index: 2;
+  background: #000;
+}
+
+.js .wrap p {
+  display: none;
+}
+
+.js .wrap h3 {
+  display: none;
+}
+
+.js .first {
+  display: block;
+}
+
+.js .wrap .current {
+  display: block;
+}
+
+
+@keyframes slidein {
+  from {
+    top: 44px;
+  }
+
+  to {
+    top: 1px;
+  }
+}
+
+@-webkit-keyframes slidein {
+  from {
+    top: 44px;
+  }
+
+  to {
+    top: 1px;
+  }
+}
+
+@-moz-keyframes slidein {
+  from {
+    top: 44px;
+  }
+
+  to {
+    top: 1px;
+  }
+}
+
+.tabbed-menu {
+  position: relative;
+  z-index: 1;
+  top: 1px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  animation: slidein .7s ease;
+  -webkit-animation: slidein .7s ease;
+  -moz-animation: slidein .7s ease;
+}
+
+.tabbed-menu li {
+  float: left;
+}
+
+.tabbed-menu a {
+  float: left;
+  padding: 12px;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.tabbed-menu .active {
+  background: #fff;
+  color: #333;
+}
+
+.wrap p {
+  position: relative;
+  z-index: 10;
+  margin: 16px;
+}
+
+.wrap-mod {
+  margin-top: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.js .wrap-mod div {
+  display: none;
+}
+
+.wrap-mod div.current {
+  display: block;
+}
+
+.wrap-mod ul {
+  width: 140px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  z-index: 2;
+  background: #000;
+}
+
+.wrap-mod ul a {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 6px;
+  display: block;
+}
+
+.wrap-mod ul a.active {
+  border-right: none;
+}
+
+.wrap-mod div {
+  padding-right: 12px;
+  padding-left: 12px;
+  width: 400px;
+  float: left;
+  border: 1px solid #fff;
+  background: #000;
+  margin-left: -1px;
+  position: relative;
+  z-index: 1;
+}
