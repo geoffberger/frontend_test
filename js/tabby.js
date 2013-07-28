@@ -1,3 +1,4 @@
+/* globals Util */
 (function(win) {
   'use strict';
 
@@ -31,7 +32,7 @@
 
   Tabby.prototype.buildMenu = function() {
     var i, len, el, output = [],
-        titles = Array.prototype.slice.call(this.headings);
+        titles = Util.convertNodeListToArray(this.headings);
 
     this.menu = document.createElement('ul');
 
@@ -50,7 +51,7 @@
   Tabby.prototype.bindToggle = function() {
     var self = this;
 
-    self.menu.addEventListener('click', function(e) {
+    Util.addEvent(self.menu, 'click', function(e) {
       var target = e.target, id;
 
       if ((id = target.getAttribute('data-id'))) {

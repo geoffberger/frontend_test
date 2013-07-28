@@ -1,3 +1,4 @@
+/* globals Util */
 (function(win) {
   'use strict';
 
@@ -28,8 +29,8 @@
 
     self.show(active.item, active.content);
 
-    self.el.addEventListener('click', function(e) {
-      e.preventDefault();
+    Util.addEvent(self.el, 'click', function(e) {
+      Util.preventDefault(e);
       var target = e.target, id;
 
       if (target.hash) {

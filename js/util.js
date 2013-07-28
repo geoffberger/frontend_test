@@ -61,6 +61,7 @@
             el['e' + evtIndex] = func;
             el[evtIndex] = function() {
               evt = window.event;
+              evt.target = evt.srcElement;
               el['e' + evtIndex](evt);
             };
 
@@ -87,6 +88,16 @@
       script.async = true;
       script.src = src;
       document.getElementsByTagName('head')[0].appendChild(script);
+    },
+
+    convertNodeListToArray: function(list) {
+      var i, len, arr = [];
+
+      for (i = 0, len = list.length; i < len; i++) {
+        arr.push(list[i]);
+      }
+
+      return arr;
     }
   };
 
