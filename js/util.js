@@ -23,6 +23,17 @@
       }
 
       return options;
+    },
+
+    template: function(contents, map) {
+      var key, exp;
+
+      for (key in map) {
+        exp = new RegExp('\{\{' + key + '\}\}');
+        contents = contents.replace(exp, map[key]);
+      }
+
+      return contents;
     }
   };
 

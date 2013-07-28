@@ -1,4 +1,21 @@
 <!doctype html>
+<!--
+  I went back and forth on the approach of this one a few times. I initially
+  thought about doing a tree-like search through the nodes, but instead opted
+  for a more direct approach of stripping out the elements and doing a straight
+  search off of that. The positives to this approach is the little overhead
+  involved with strictly parsing out the elements and then doing a regular
+  expression for the phrase passed in. On the flip side though, if I wanted to
+  do more with this, i.e. highlight the area that was searched on, it would be
+  rather difficult. Nonetheless, if I have time between now and then, I might
+  look into implementing this and doing benchmarks between the two.
+
+  I added a few smaller things to the markup, i.e. an id on the form element, a
+  placeholder on the search bar, and a few other things. Since the results
+  output was dynamic, I decided to create a quick and dirty template parser (if
+  you can even call it that), to simulate how a client side template would be
+  used.
+-->
 <html>
 <head>
 	<title>Frontend Coding Test | Text Search</title>
@@ -27,13 +44,15 @@
 	<hr/>
 
 	<h2>Search</h2>
-	<form>
-		<input type="text" id="search_input" value="llama" />
+	<form id="search-form">
+		<input type="text" id="search_input" name="search_input" placeholder="foo bar baz" />
 		<input type="submit" value="Search" />
 	</form>
 
 	<h3>Results</h3>
-	Found 0 occurances of the word "llama" in the below text.
+  <p id="results">
+    Search the form above.
+  </p>
 
 	<hr/>
 
@@ -53,6 +72,14 @@
 		</p>
 	</div>
 </div>
+
+<script type="text/html" id="results-template">
+  Found {{occurrences}} occurances of the word {{phrase}} in the below text.
+</script>
+
+<script src="../js/util.js"></script>
+<script src="../js/finder.js"></script>
+<script src="../js/text-search.js"></script>
 
 </body>
 </html>
